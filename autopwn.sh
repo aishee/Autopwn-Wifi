@@ -1,7 +1,5 @@
 #!/bin/bash
-
-ICARD=""
-REPLY=""
+# @Author: Aishee Nguyen - MatrixSec Team
 
 declare -A Str1
 Str1="\033[1mThere is no wireless interface on your system. Exit.\e[0m"
@@ -10,7 +8,7 @@ declare -A Str2
 Str2="\033[1mThere is one wireless interface on your system. Automatically Selected\e[0m"
 
 declare -A Str3
-Str3="\033[1mAvailable wireless interfaces]"
+Str3="\033[1mAvailable wireless interfaces"
 
 declare -A Str4
 Str4="Enter the number corresponding to the selected interface: "
@@ -95,6 +93,10 @@ Str30="Enter the number corresponding to the selected menu item: "
 
 declare -A Str31
 Str31="The script is over."
+
+ICARD=""
+REPLY=""
+
 
 function selectInterface {
   clear
@@ -399,7 +401,7 @@ if [[ ${#DEVS[@]} == 1 ]]; then
 fi
 
 function showMainMenu {
-  if [[ "$ICARD" ]]; then
+  if [[ "$ICARD" ]]; then   
     INF=${Str27}$ICARD
 
     while read -r line ; do
